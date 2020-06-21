@@ -6,6 +6,8 @@ import { createStore } from 'redux'
 import rootReducer from 'state'
 import './index.scss';
 
+import HOME from 'pages/HOME'
+import ANY from 'pages/ANY'
 
 
 const store = createStore(rootReducer)
@@ -18,11 +20,11 @@ ReactDOM.render(
         <Switch>
 
           <Route exact path="/">
-            <p>CLEAN</p>
+            <HOME />
           </Route>
           
           <Route path="*">
-            <p>OTHER</p>
+            <ANY />
           </Route>
 
         </Switch>
