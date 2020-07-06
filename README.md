@@ -1,6 +1,6 @@
 ## CLEAR Template
 
-Clear Frontend template with regular libraries: React, Redux, Typescript, Sass - ready and easy to use template.
+Clear Frontend template with regular libraries: React, Redux, Typescript, Sass - ready and easy to use template.<br />
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
