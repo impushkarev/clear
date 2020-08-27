@@ -1,4 +1,7 @@
+// CUR COMPONENT
 import React from 'react'
+
+
 
 const HOME:React.FC = () => {
   return (
