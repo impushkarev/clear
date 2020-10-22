@@ -1,13 +1,9 @@
 // COLORS
-$primary: #0029FA;
+$primary: #0029fa;
 $dark_primary: $primary - 50;
 $light_primary: $primary + 50;
 
-
-
 // FONT
-
-
 
 // RYTHM
 $rythm-fz: 16px;
@@ -15,7 +11,7 @@ $rythm: 24px;
 
 $grid-columns: 12;
 $grid-width: 1440px;
-$grid-gap: $rythm / 2;
+$grid-gap: 16px / 2;
 
 // SCREEN
 $screen-xs: 0;
@@ -24,4 +20,10 @@ $screen-md: 768;
 $screen-lg: 992;
 $screen-xl: 1200;
 
-$screen-breakpoint: ("xs": $screen-xs, "sm": $screen-sm, "md": $screen-md, "lg": $screen-lg, "xl": $screen-xl);
+$screen-breakpoint: (
+  "xs": $screen-xs,
+  "sm": $screen-sm,
+  "md": $screen-md,
+  "lg": $screen-lg,
+  "xl": $screen-xl,
+);
