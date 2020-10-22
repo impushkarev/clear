@@ -1,0 +1,24 @@
+@import "_const.scss";
+
+$grid-gap: $grid-gap;
+$grid-columns: $grid-columns;
+
+$screen-breakpoint: $screen-breakpoint;
+$column-width: 100% / $grid-columns;
+
+.col {
+  flex: 1;
+  padding-left: $grid-gap;
+  padding-right: $grid-gap;
+
+  @each $name, $value in $screen-breakpoint {
+    @media (min-width: "#{$value}px") {
+      @for $i from 1 to $grid-columns + 1 {
+        &.col-#{$name}-#{$i} {
+          flex: 0 0 $column-width * $i;
+          max-width: $column-width * $i;
+        }
+      }
+    }
+  }
+}

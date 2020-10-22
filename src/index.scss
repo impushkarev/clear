@@ -1,10 +1,4 @@
-//FONTS
-
-
-//COLORS
-$primary: #0029FA;
-$dark_primary: #230A59;
-$light_primary: #5C73F2;
+@import '_const.scss';
 
 //CLEAR
 * {
@@ -15,56 +9,108 @@ $light_primary: #5C73F2;
 
 body {
   margin: 0 auto;
-  font-size: 14px;
-  max-width: 1440px;
+  font-size: $rythm-fz;
+  background-image: url("components/Grid/grid_8.png"), url("components/Grid/grid_24.png");
+}
+main {
 
-  a {
-    color: $primary;
+}
+section {
+  padding-top: $rythm * 2;
+  padding-bottom: $rythm * 2;
 
-    &:focus, &:visited {
-      color: $light_primary;
-    }
-    &:hover {
-      color: $dark_primary;
-    }
-  }
-  img {
-    width: auto;
-    max-width: 100%;
+  &.section_wp {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
-//GRID
-$grid-gap: 10px;
-$grid-columns: 12;
+a {
+  color: $primary;
 
-.container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 $grid-gap;
-}
-.wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 (-1 * $grid-gap);
-}
-.col {
-  padding: 0 $grid-gap;
-
-  &.col-auto {
-    flex: 0 0 auto;
+  &:focus, &:visited {
+    color: $light_primary;
   }
+  &:hover {
+    color: $dark_primary;
+  }
+}
 
-  $col-width: 100% / $grid-columns;
-  @for $i from 1 through $grid-columns {
-    &.col-#{$i} {
-      flex: 0 0 ($i * $col-width);
-    }
-    &.col-ml-#{$i} {
-      margin-left: $i * $col-width;
-    }
-    &.col-mr-#{$i} {
-      margin-right: $i * $col-width;
-    }
+img {
+  width: auto;
+  height: 100%;
+  display: block;
+}
+.img {
+  overflow: hidden;
+}
+
+
+// ТЕКСТ
+// тема текста задется блоком .m-theme и любым блочным элементом, которые будут делить на смысловые блоки
+p, .p, h6, h5, h4, h3, h2, h1, 
+.h6, .h5, .h4, .h3, .h2, .h1, .img
+{
+  background-color: #00000015;
+  
+  &:not(:first-child) {
+    margin-top: $rythm;
+  }
+  &:not(:last-child) {
+    margin-bottom: $rythm;
+  }
+}
+span, .span, p, .p, h6, .h6 {
+  line-height: $rythm;
+}
+h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, h1 {
+  line-height: $rythm * 2;
+}
+h6, .h6 {
+  font-size: 1.25rem;
+}
+h5, .h5 {
+  font-size: 1.5rem;
+}
+h4, .h4 {
+  font-size: 1.75rem;
+}
+h3, .h3 {
+  font-size: 2rem;
+}
+h2, .h2 {
+  font-size: 2.25rem;
+}
+h1, .h1 {
+  font-size: 2.5rem;
+}
+ul, .ul {
+  padding-left: 1.1rem;
+  margin-bottom: $rythm;
+  margin-top: $rythm;
+  
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  ul, .ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+li, .li {
+  display: list-item;
+  line-height: $rythm;
+}
+
+.m-theme {
+
+  &:not(:first-child) {
+    margin-top: $rythm * 4;
+  }
+  & > *:not(:first-child) {
+    margin-top: $rythm * 2;
   }
 }

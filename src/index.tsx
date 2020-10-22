@@ -19,6 +19,26 @@ import Footer from 'components/Footer'
 
 const store = createStore(rootReducer)
 
+const resizeImg = () => {
+  const baseLine = 24
+  const imgs = document.querySelectorAll('.img')
+
+  for (const imgWrapper of [...imgs as any]) {
+    const img = imgWrapper.querySelector('img')
+
+    if (!img.aspectRatio) {
+      img.aspectRatio = img.width / img.height
+    }
+    
+    const newHeight = img.parentElement.offsetWidth / img.aspectRatio
+    const leftOver = newHeight % baseLine
+
+    imgWrapper.style.height = newHeight + baseLine - leftOver + "px"
+  }
+}
+window.addEventListener('load', resizeImg)
+window.addEventListener('resize', resizeImg)
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -26,17 +46,19 @@ ReactDOM.render(
 
         <Header />
         
-        <Switch>
+        <main>
+          <Switch>
 
-          <Route exact path="/">
-            <HOME />
-          </Route>
-          
-          <Route path="*">
-            <ANY />
-          </Route>
+            <Route exact path="/">
+              <HOME />
+            </Route>
+            
+            <Route path="*">
+              <ANY />
+            </Route>
 
-        </Switch>
+          </Switch>
+        </main>
 
         <Footer />
 

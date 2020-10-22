@@ -1,0 +1,23 @@
+@import "_const.scss";
+
+$grid-gap: $grid-gap;
+$wrapper-halignment: ("left": flex-start, "hcenter": center, "right": flex-end, "between": space-between);
+$wrapper-valignment: ("top": flex-start, "vcenter": center, "bottom": flex-end);
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$grid-gap;
+  margin-right: -$grid-gap;
+  
+  @each $name, $value in $wrapper-halignment {
+    &.wrapper-#{$name} {
+      justify-content: $value;
+    }
+  }
+  @each $name, $value in $wrapper-valignment {
+    &.wrapper-#{$name} {
+      align-items: $value;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+// COLORS
+$primary: #0029FA;
+$dark_primary: $primary - 50;
+$light_primary: $primary + 50;
+
+
+
+// FONT
+
+
+
+// RYTHM
+$rythm-fz: 16px;
+$rythm: 24px;
+
+$grid-columns: 12;
+$grid-width: 1440px;
+$grid-gap: $rythm / 2;
+
+// SCREEN
+$screen-xs: 0;
+$screen-sm: 576;
+$screen-md: 768;
+$screen-lg: 992;
+$screen-xl: 1200;
+
+$screen-breakpoint: ("xs": $screen-xs, "sm": $screen-sm, "md": $screen-md, "lg": $screen-lg, "xl": $screen-xl);
